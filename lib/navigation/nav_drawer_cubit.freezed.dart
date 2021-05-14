@@ -148,7 +148,7 @@ abstract class _Home implements NavItem {
 class _$NavDrawerCubitStateTearOff {
   const _$NavDrawerCubitStateTearOff();
 
-  _NavDrawerCubitState call({required NavItem navItem}) {
+  _NavDrawerCubitState call({NavItem navItem = const NavItem.home()}) {
     return _NavDrawerCubitState(
       navItem: navItem,
     );
@@ -246,8 +246,9 @@ class __$NavDrawerCubitStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_NavDrawerCubitState implements _NavDrawerCubitState {
-  _$_NavDrawerCubitState({required this.navItem});
+  _$_NavDrawerCubitState({this.navItem = const NavItem.home()});
 
+  @JsonKey(defaultValue: const NavItem.home())
   @override
   final NavItem navItem;
 
@@ -276,8 +277,7 @@ class _$_NavDrawerCubitState implements _NavDrawerCubitState {
 }
 
 abstract class _NavDrawerCubitState implements NavDrawerCubitState {
-  factory _NavDrawerCubitState({required NavItem navItem}) =
-      _$_NavDrawerCubitState;
+  factory _NavDrawerCubitState({NavItem navItem}) = _$_NavDrawerCubitState;
 
   @override
   NavItem get navItem => throw _privateConstructorUsedError;

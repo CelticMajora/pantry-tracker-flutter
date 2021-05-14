@@ -11,18 +11,18 @@ class NavItem with _$NavItem {
 @freezed
 class NavDrawerCubitState with _$NavDrawerCubitState {
   factory NavDrawerCubitState({
-    required NavItem navItem,
+    @Default(NavItem.home()) NavItem navItem,
   }) = _NavDrawerCubitState;
 }
 
 class NavDrawerCubit extends Cubit<NavDrawerCubitState> {
-  NavDrawerCubit(NavDrawerCubitState initialState) : super(initialState);
+  NavDrawerCubit() : super(NavDrawerCubitState());
 
   NavDrawerCubitState _navigate({required NavItem navItem}) {
     return state.copyWith(navItem: navItem);
   }
 
-  NavDrawerCubitState home() {
-    return _navigate(navItem: NavItem.home());
+  void home() {
+    emit(_navigate(navItem: NavItem.home()));
   }
 }
