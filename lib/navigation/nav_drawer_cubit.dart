@@ -4,20 +4,20 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'nav_drawer_cubit.freezed.dart';
 
 @freezed
-abstract class NavItem with _$NavItem {
+class NavItem with _$NavItem {
   const factory NavItem.home() = _Home;
 }
 
 @freezed
-abstract class NavDrawerCubitState with _$NavDrawerCubitState {
+class NavDrawerCubitState with _$NavDrawerCubitState {
   factory NavDrawerCubitState({
-    @Default(NavItem.home()) NavItem navItem,
+    required NavItem navItem,
   }) = _NavDrawerCubitState;
 }
 
 class NavDrawerCubit extends Cubit<NavDrawerCubitState> {
   NavDrawerCubit(NavDrawerCubitState initialState) : super(initialState);
-  
+
   NavDrawerCubitState _navigate({required NavItem navItem}) {
     return state.copyWith(navItem: navItem);
   }
@@ -26,4 +26,3 @@ class NavDrawerCubit extends Cubit<NavDrawerCubitState> {
     return _navigate(navItem: NavItem.home());
   }
 }
-
