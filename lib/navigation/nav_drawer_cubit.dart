@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'nav_drawer_bloc.freezed.dart';
+part 'nav_drawer_cubit.freezed.dart';
 
 @freezed
 abstract class NavItem with _$NavItem {
