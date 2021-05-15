@@ -33,6 +33,8 @@ dependencies:
   freezed_annotation: ^0.14.2
   json_serializable: ^4.1.1
   bloc_test: ^8.0.0
+  http: ^0.13.3
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
