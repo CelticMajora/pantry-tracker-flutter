@@ -1,4 +1,3 @@
-import 'package:http/http.dart';
 import 'package:pantry_tracker_flutter/core/http_client.dart';
 import 'package:pantry_tracker_flutter/data/models/pantry_item.dart';
 import 'package:pantry_tracker_flutter/data/models/pantry_items_response.dart';
